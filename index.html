@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Abel PortFolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    </head>
+<body class="dark:bg-gray-900 dark:text-gray-100">
+    <nav class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-gray-800 dark:text-white">Joseph Abel<span class="text-primary">.</span></a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition">About</a>
+                    <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition">Skills</a>
+                    <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition">Projects</a>
+                    <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition">Experience</a>
+                    <a href="#contact" class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-md font-medium transition">Contact</a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i id="theme-icon" class="fas fa-sun text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                    <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                </button>
+            </div>
+        </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">About</a>
+                <a href="#skills" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Skills</a>
+                <a href="#projects" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Projects</a>
+                <a href="#experience" class="block text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Experience</a>
+                <a href="#contact" class="block px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-md font-medium text-center">Contact</a>
+                
+                <div class="flex justify-center">
+                    <button id="mobile-theme-toggle" class="px-4 py-2 rounded-md font-medium">
+                        <i id="mobile-theme-icon" class="fas fa-sun text-gray-600 dark:text-gray-300"></i> 
+                        <span class="ml-2">Toggle Theme</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="min-h-screen pt-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hello, I'm <span class="text-primary">Joseph Abel</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-300 mb-8">
+                        Full Stack Developer & Computer Engineer
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                        I build scalable web applications with clean, 
+                        efficient code and exceptional user experiences.
+                         Passionate about solving complex problems through technology.
+                         Also deals with hardware and software.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-md font-medium transition shadow-lg">
+                            View My Work <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-primary
+                         text-gray-700 dark:text-gray-200 rounded-md font-medium transition">
+                            Get In Touch
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 flex space-x-6">
+                        <a href="https://fa-github.com/abelcash18" class="text-gray-600 dark:text-gray-300 hover:text-primary">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://fa-linkedin.com/Joseph Abel" class="text-gray-600 dark:text-gray-300 hover:text-primary">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://fa-twitter.com/JosephAlfredca2" class="text-gray-600 dark:text-gray-300 hover:text-primary">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        </div>
+                </div>                
+                <div class="animate-in delay-100 hidden md:flex justify-center">
+                    <div class="relative w-80 h-80 lg:w-96 lg:h-96">
+                        <div class="absolute inset-0 bg-primary rounded-full opacity-10 blur-2xl"></div>
+                        <img src="my.jpg" alt="Professional portrait of Joseph Abel, a full stack developer with dark hair a School Environment"
+                         class="relative rounded-full w-full h-full object-cover border-4 border-primary shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title">About Me</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-in delay-100">
+                    <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        I'm a passionate Full Stack Developer with over 0 years of experience in building web applications. 
+                        My journey in tech began with a Computer Science degree and has evolved through various roles in startups and tech companies.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        I specialize in.
+                         My approach combines technical excellence with user-centric design to create products that are both powerful and intuitive.
+                    </p>
+                    
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Abeokuta Ogun-State, NG</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">josephabel540gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://josephlink.tiiny.site" class="inline-block px-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-md font-medium transition">
+                        Download Resume <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="animate-in delay-200 grid grid-cols-2 gap-4">
+                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-primary mb-2">0+</div>
+                        <div class="text-gray-600 dark:text-gray-300">Years Experience</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-primary mb-2">6+</div>
+                        <div class="text-gray-600 dark:text-gray-300">Years Experience in Computer Engineering</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-primary mb-2">10+</div>
+                        <div class="text-gray-600 dark:text-gray-300">Projects Completed</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-primary mb-2">0+</div>
+                        <div class="text-gray-600 dark:text-gray-300">Happy Clients</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-primary mb-2">5</div>
+                        <div class="text-gray-600 dark:text-gray-300">Tech Certifications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title">My Skills</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="skill-card animate-in p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+                            <i class="fas fa-laptop-code text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Frontend Development</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">React.js, Next.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">JavaScript/TypeScript</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">HTML5 & CSS3</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Tailwind CSS, Bootstrap</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Redux, Context API</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="skill-card animate-in delay-100 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+                            <i class="fas fa-server text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Backend Development</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Node .js, Express.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 
+
+dark:text-gray-300">RESTful APIs, GraphQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">MongoDB, PostgreSQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Firebase, AWS</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- DevOps Skills -->
+                <div class="skill-card animate-in delay-200 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+
+                            <i class="fas fa-cogs text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">DevOps & Tools</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Docker, Kubernetes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">CI/CD, Jenkins</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Git, GitHub, GitLab</span>
+                        </li>                       
+                    </ul>
+                </div>
+
+                 <div class="skill-card animate-in delay-200 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+
+                            <i class="fas fa-cogs text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Engineer Skills</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Repairs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">CI/CD, Jenkins</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Git, GitHub, GitLab</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Agile, Scrum</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title">My Level One Projects</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="form.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Style-Form</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">An assignment to create form and style it to our taste as desire.</p>
+                        <a href="https://abelcash18.github.io/Style-Form/" class="text-primary hover:underline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="profile card.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Profile-Card</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">This is a personal Profile-Card created as an assignment.</p>
+                        <a href="https://abelcash18.github.io/Profile-Card/" class="text-primary hover:underline">View Project</a>
+                    </div>
+                </div>
+                  <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="amazon clone.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Clone-Amazon</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">This clone was level one rounding up project, this is amazon clone its an E-commerce website.</p>
+                        <a href="https://abelcash18.github.io/Amazon-clone/" class="text-primary hover:underline">View Project</a>
+                   </div>
+             </div>
+            </section>
+
+    <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title">My Level Two Projects</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="network .jpg" alt="Project 4" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Network Provider Phone-Number-identifier</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">This is network Provider Phone-Number-identifier, it identifies network Provider in Nigeria</p>
+                        <a href="https://abelcash18.github.io/Phone-Number-identifier/" class="text-primary hover:underline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project Title 2</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Brief description of the project goes here. It highlights the main features and technologies used.</p>
+                        <a href="#" class="text-primary hover:underline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project Title 3</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Brief description of the project goes here. It highlights the main features and technologies used.</p>
+                        <a href="#" class="text-primary hover:underline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project Title 3</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Brief description of the project goes here. It highlights the main features and technologies used.</p>
+                        <a href="#" class="text-primary hover:underline">View Project</a>
+                    </div>
+            </div>
+            <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project Title 3</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Brief description of the project goes here. It highlights the main features and technologies used.</p>
+                        <a href="#" class="text-primary hover:underline">View Project</a>
+                    </div>
+        </div>
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project Title 3</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Brief description of the project goes here. It highlights the main features and technologies used.</p>
+                        <a href="#" class="text-primary hover:underline">View Project</a>
+                    </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title">Experience</h2>
+            </div>
+            <div class="relative">
+                <div class="timeline">
+                    <div class="timeline-item mb-8">
+                        <h3 class="text-xl font-semibold">Job Title 1</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Company Name | Year - Year</p>
+                        <p class="text-gray-600 dark:text-gray-300">Description of responsibilities and achievements in this role.</p>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <h3 class="text-xl font-semibold">Job Title 2</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Company Name | Year - Year</p>
+                        <p class="text-gray-600 dark:text-gray-300">Description of responsibilities and achievements in this role.</p>
+                    </div>
+                    <div class="timeline-item mb-8">
+                        <h3 class="text-xl font-semibold">Job Title 3</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Company Name | Year - Year</p>
+                        <p class="text-gray-600 dark:text-gray-300">Description of responsibilities and achievements in this role.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title">Contact Me</h2>
+            </div>
+            <form action="#" method="POST" class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-600 dark:text-gray-300 mb-2">Full Name</label>
+                    <input type="text" id="fullName" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-600 dark:text-gray-300 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-600 dark:text-gray-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                </div>
+                <button id="sendMessage" type="submit" class="w-full px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-md font-medium transition shadow-lg">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer class="py-6 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">© 2025 Joseph Abel. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+<script src="index.js"></script>
+</body>
+</html>
