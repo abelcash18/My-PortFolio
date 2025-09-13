@@ -1,13 +1,12 @@
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         :root {
             --primary: #4F46E5;
             --primary-dark: #4338CA;
             --secondary: #10B981;
-            --dark: #1F2937;
+            --dark: #121213;
             --light: #F9FAFB;
             --surface: #FFFFFF;
-
             --surface-dark: #111827;
         }
         
@@ -18,7 +17,7 @@
             transition: all 0.3s ease;
         }
         
-        .dark body {
+        body.dark {
             background-color: var(--surface-dark);
             color: var(--light);
         }
@@ -103,4 +102,4 @@
         .delay-300 {
             animation-delay: 0.3s;
         }
-    
+
