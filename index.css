@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --primary: #4F46E5;
-    --primary-dark: #4338CA;
-    --primary-light: #6366F1;
+    --primary: #00f0ef; /* Updated to match your HTML's custom primary cyan tint */
+    --primary-dark: #00b8b7;
+    --primary-light: #67ffff;
     --secondary: #10B981;
     --gray-100: #F3F4F6;
     --gray-200: #E5E7EB;
     --gray-600: #4B5563;
     --gray-900: #111827;
     --surface-light: #FFFFFF;
-    --surface-dark: #0F172A;
+    --surface-dark: #111827; /* Matched to dark:bg-gray-900 layout */
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -35,6 +35,8 @@ body {
     transition: var(--transition-base);
 }
 
+/* Dark mode configurations targeting Tailwind's .dark root selector injection */
+.dark body,
 body.dark {
     background-color: var(--surface-dark);
     color: #F9FAFB;
@@ -70,8 +72,14 @@ body.dark {
     width: 100%;
 }
 
+.dark .nav-link,
 body.dark .nav-link {
     color: #D1D5DB;
+}
+
+.dark .nav-link:hover,
+body.dark .nav-link:hover {
+    color: var(--primary);
 }
 
 /* Theme Button */
@@ -92,6 +100,7 @@ body.dark .nav-link {
     background: var(--gray-100);
 }
 
+.dark .theme-button:hover,
 body.dark .theme-button:hover {
     background: rgba(75, 85, 99, 0.2);
 }
@@ -113,14 +122,14 @@ body.dark .theme-button:hover {
 
 .btn-primary {
     background: var(--primary);
-    color: white;
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
+    color: #111827;
+    box-shadow: 0 10px 25px rgba(0, 240, 239, 0.2);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 240, 239, 0.3);
 }
 
 .btn-secondary {
@@ -134,11 +143,13 @@ body.dark .theme-button:hover {
     color: var(--primary);
 }
 
+.dark .btn-secondary,
 body.dark .btn-secondary {
     border-color: rgba(209, 213, 219, 0.3);
     color: #F9FAFB;
 }
 
+.dark .btn-secondary:hover,
 body.dark .btn-secondary:hover {
     border-color: var(--primary);
     color: var(--primary);
@@ -158,29 +169,38 @@ body.dark .btn-secondary:hover {
     transform: translateY(-3px);
 }
 
+.dark .social-link,
 body.dark .social-link {
     color: #D1D5DB;
 }
 
-/* Section Title */
+/* Section Title global center alignments */
 .section-title {
     position: relative;
     padding-bottom: 1rem;
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 3rem;
+    display: inline-block;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
     height: 4px;
     background: var(--primary);
     border-radius: 2px;
 }
+
+/* Left-aligned title variant for grid layouts */
+.border-l-4.section-title::after {
+    display: none;
+}
+
 /* Card Styles */
 .skill-card,
 .project-card {
@@ -190,9 +210,11 @@ body.dark .social-link {
     transition: var(--transition-base);
 }
 
+.dark .skill-card,
+.dark .project-card,
 body.dark .skill-card,
 body.dark .project-card {
-    background: #1E293B;
+    background: #1F2937; /* Balanced dark grid container hex fill */
 }
 
 .skill-card {
@@ -201,7 +223,7 @@ body.dark .project-card {
 
 .skill-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 240, 239, 0.15);
 }
 
 .project-card {
@@ -213,8 +235,9 @@ body.dark .project-card {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.dark .project-card:hover,
 body.dark .project-card:hover {
-    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 240, 239, 0.1);
 }
 
 .project-overlay {
@@ -241,7 +264,7 @@ body.dark .project-card:hover {
     top: 0.5rem;
     width: 3px;
     height: calc(100% - 0.5rem);
-    background: linear-gradient(180deg, var(--primary) 0%, rgba(79, 70, 229, 0.3) 100%);
+    background: linear-gradient(180deg, var(--primary) 0%, rgba(0, 240, 239, 0.3) 100%);
     border-radius: 2px;
 }
 
@@ -258,8 +281,9 @@ body.dark .project-card:hover {
     box-shadow: 0 0 0 3px var(--primary);
 }
 
+.dark .timeline-item::after,
 body.dark .timeline-item::after {
-    border-color: var(--surface-dark);
+    border-color: #111827;
 }
 
 /* Animations */
@@ -268,17 +292,9 @@ body.dark .timeline-item::after {
     opacity: 0;
 }
 
-.delay-100 {
-    animation-delay: 100ms;
-}
-
-.delay-200 {
-    animation-delay: 200ms;
-}
-
-.delay-300 {
-    animation-delay: 300ms;
-}
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
 
 @keyframes fadeIn {
     from {
@@ -291,19 +307,14 @@ body.dark .timeline-item::after {
     }
 }
 
-/* Utility Classes */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-
-/* Accessibility */
+/* Accessibility focusing flags */
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
-/* Responsive Design */
+/* Responsive Design Overrides */
 @media (max-width: 768px) {
     .section-title {
         font-size: 1.875rem;
@@ -327,4 +338,3 @@ button:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
-

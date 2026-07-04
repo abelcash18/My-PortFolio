@@ -6,6 +6,22 @@
     <meta name="description" content="Joseph Abel - Full Stack Developer & Computer Engineer">
     <title>Joseph Abel Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Inline script to prevent theme flashing on load
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#00f0ef',
+                            dark: '#00b8b7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="icon" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,7 +29,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Navigation -->
     <nav class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
@@ -24,22 +42,24 @@
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <button id="theme-toggle" class="theme-button" aria-label="Toggle dark mode">
+                    <button id="theme-toggle" class="theme-button p-2 text-gray-600 dark:text-gray-300" aria-label="Toggle dark mode">
                         <i id="theme-icon" class="fas fa-sun"></i>
                     </button>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden theme-button" aria-label="Open mobile menu">
+                <button id="mobile-menu-button" class="md:hidden theme-button p-2" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg animate-in">
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg mt-2 rounded-lg overflow-hidden">
                 <div class="px-6 py-4 space-y-2">
-                    <a href="#about" class="nav-link block">About</a>
-                    <a href="#skills" class="nav-link block">Skills</a>
-                    <a href="#projects" class="nav-link block">Projects</a>
-                    <a href="#experience" class="nav-link block">Experience</a>
-                    <a href="#contact" class="nav-link block">Contact</a>
-                    <button id="mobile-theme-toggle" class="theme-button px-4 py-2 w-full text-left">
+                    <a href="#about" class="nav-link block py-2 border-b border-gray-100 dark:border-gray-700">About</a>
+                    <a href="#skills" class="nav-link block py-2 border-b border-gray-100 dark:border-gray-700">Skills</a>
+                    <a href="#projects" class="nav-link block py-2 border-b border-gray-100 dark:border-gray-700">Projects</a>
+                    <a href="#experience" class="nav-link block py-2 border-b border-gray-100 dark:border-gray-700">Experience</a>
+                    <a href="#contact" class="nav-link block py-2">Contact</a>
+                    <button id="mobile-theme-toggle" class="theme-button px-4 py-2 w-full text-left flex items-center bg-gray-50 dark:bg-gray-700 rounded-md">
                         <i id="mobile-theme-icon" class="fas fa-sun"></i>
                         <span class="ml-2">Toggle Theme</span>
                     </button>
@@ -47,6 +67,8 @@
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
     <section id="home" class="min-h-screen pt-24 flex items-center">
         <div class="max-w-7xl mx-auto px-6 w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -61,21 +83,21 @@
                         I build scalable web applications with clean, efficient code and exceptional user experiences. Passionate about solving complex problems through technology, working across both hardware and software domains.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="btn btn-primary">
+                        <a href="#projects" class="px-6 py-3 bg-primary text-gray-900 font-semibold rounded-md shadow-md hover:bg-primary-dark transition inline-flex items-center">
                             View My Work <i class="fas fa-arrow-right ml-2"></i>
                         </a>
-                        <a href="#contact" class="btn btn-secondary">
+                        <a href="#contact" class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition inline-block">
                             Get In Touch
                         </a>
                     </div>
                     <div class="mt-12 flex gap-6">
-                        <a href="https://github.com/abelcash18" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/abelcash18" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
-                        <a href="https://linkedin.com/in/JosephAbel" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linkedin.com/in/JosephAbel" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin text-2xl"></i>
                         </a>
-                        <a href="https://twitter.com/JosephAlfredca2" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                        <a href="https://twitter.com/JosephAlfredca2" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-twitter text-2xl"></i>
                         </a>
                     </div>
@@ -91,6 +113,8 @@
             </div>
         </div>
     </section>
+
+    <!-- About Section -->
     <section id="about" class="py-20 bg-white dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -99,444 +123,359 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-in delay-100">
-                    <h3 class=" text-black-600 dark:text-white-300 text-2xl font-semibold mb-4">Who I Am</h3>
-                    <p class="text-black-600 dark:text-white-300 mb-4">
-                        I'm a passionate Full Stack Developer with over 1 year of experience in building web applications. 
-                        My journey in tech began with a Computer Science degree and has evolved through various roles in startups and tech companies.
+                    <h3 class="text-gray-800 dark:text-white text-2xl font-semibold mb-4">Who I Am</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        I'm a passionate Full Stack Developer with over a year of robust building experience. My journey in tech began with structural computer engineering principles and has evolved through deploying custom interactive layers across web applications.
                     </p>
-                    <p class="text-black-600 dark:text-white-300 mb-4">
-                        I specialize in.
-                         My approach combines technical excellence with user-centric design to create products that are both powerful and intuitive.
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        I specialize in MERN Stack architectures, systems integration, and engineering hardware diagnostics. My approach combines technical excellence with user-centric design to create products that are both powerful and intuitive.
                     </p>
                     
-                    <div class="flex items-center space-x-4 mb-8">
+                    <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-4 mb-8 text-sm">
                         <div class="flex items-center">
                             <i class="fas fa-map-marker-alt text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Abeokuta Ogun-State, NG</span>
+                            <span class="text-gray-600 dark:text-gray-300">Abeokuta Ogun-State, NG</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-envelope text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-gray-300">josephabel540@gmail.com</span>
+                            <span class="text-gray-600 dark:text-gray-300">josephabel540@gmail.com</span>
                         </div>
-                      <div class="flex items-center">
+                        <div class="flex items-center">
                             <i class="fas fa-phone text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">+23490-5642-4816</span>
+                            <span class="text-gray-600 dark:text-gray-300">+23490-5642-4816</span>
                         </div>
                     </div>
                     
-                    <a href="https://josephlink.tiiny.site" class="inline-block px-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-md font-medium transition">
+                    <a href="https://josephlink.tiiny.site" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-md font-medium transition">
                         Download Resume <i class="fas fa-download ml-2"></i>
                     </a>
                 </div>
                 
                 <div class="animate-in delay-200 grid grid-cols-2 gap-4">
-                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-700/50 rounded-lg shadow-sm">
                         <div class="text-4xl font-bold text-primary mb-2">3+</div>
-                        <div class="text-black-600 dark:text-white-300">Years Experience</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm">Years Development Experience</div>
                     </div>
-                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-700/50 rounded-lg shadow-sm">
                         <div class="text-4xl font-bold text-primary mb-2">7+</div>
-                        <div class="text-black-600 dark:text-white-300">Years Experience in Computer Engineering</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm">Years Computer Engineering</div>
                     </div>
-                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-700/50 rounded-lg shadow-sm">
                         <div class="text-4xl font-bold text-primary mb-2">10+</div>
-                        <div class="text-black-600 dark:text-white-300">Projects Completed</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm">Projects Completed</div>
                     </div>
-                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
-                        <div class="text-4xl font-bold text-primary mb-2">3+</div>
-                        <div class="text-black-600 dark:text-white-300">Happy Clients</div>
-                    </div>
-                    <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-700/50 rounded-lg shadow-sm">
                         <div class="text-4xl font-bold text-primary mb-2">5</div>
-                        <div class="text-black-600 dark:text-white-300"> Tech Certifications</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm">Tech Certifications</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-       <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4 section-title">My Skills</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="skill-card animate-in p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend -->
+                <div class="skill-card p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                     <div class="flex items-center mb-4">
-                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+                        <div class="p-3 bg-primary/10 rounded-full mr-4">
                             <i class="fas fa-laptop-code text-primary text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Frontend Development</h3>
+                        <h3 class="text-xl font-semibold">Frontend</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">React.js, Next.js</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">JavaScript/TypeScript</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">HTML5 & CSS3</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Tailwind CSS, Bootstrap</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Redux, Context API</span>
-                        </li>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>React.js, Next.js</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>JavaScript / TypeScript</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>HTML5 & CSS3</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Tailwind CSS, Bootstrap</li>
                     </ul>
                 </div>
                 
-                <div class="skill-card animate-in delay-100 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                <!-- Backend -->
+                <div class="skill-card p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                     <div class="flex items-center mb-4">
-                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+                        <div class="p-3 bg-primary/10 rounded-full mr-4">
                             <i class="fas fa-server text-primary text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Backend Development</h3>
+                        <h3 class="text-xl font-semibold">Backend</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Node .js, Express.js</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">RESTful APIs, GraphQL</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">MongoDB, PostgreSQL</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Firebase, AWS</span>
-                        </li>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Node.js, Express.js</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>RESTful APIs & GraphQL</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>MongoDB, PostgreSQL</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Firebase, AWS Basics</li>
                     </ul>
                 </div>
                 
-                <div class="skill-card animate-in delay-200 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                <!-- DevOps -->
+                <div class="skill-card p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                     <div class="flex items-center mb-4">
-                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+                        <div class="p-3 bg-primary/10 rounded-full mr-4">
                             <i class="fas fa-cogs text-primary text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">DevOps & Tools</h3>
+                        <h3 class="text-xl font-semibold">Tools & DevOps</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Docker, Kubernetes</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">CI/CD, Jenkins</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Git, GitHub, GitLab</span>
-                        </li>                       
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Docker & Kubernetes</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>CI/CD Workflow</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Git, GitHub, GitLab</li>
                     </ul>
                 </div>
 
-                 <div class="skill-card animate-in delay-200 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-                    <div class="flex items-center mb-7">
-                        <div class="p-3 bg-primary bg-opacity-10 rounded-full mr-4">
+                <!-- Engineering -->
+                <div class="skill-card p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-primary/10 rounded-full mr-4">
                             <i class="fas fa-tools text-primary text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Engineer Skills</h3>
+                        <h3 class="text-xl font-semibold">Engineering</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Repairs/Reloading</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Software Installation and Updating</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Buy/Sell/Swap</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-black-600 dark:text-white-300">Training</span>
-                        </li>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Hardware Repairs</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>OS & Software Deployments</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>System Optimization</li>
+                        <li><i class="fas fa-check-circle text-primary mr-2 text-xs"></i>Technical Support</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="py-20 bg-white dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4 section-title">Projects</h2>
-                <p class="text-black-600 dark:text-white-300">A selection of projects across multiple levels — click to view.</p>
+                <p class="text-gray-600 dark:text-gray-300">A selection of my works — click to explore live previews.</p>
             </div>
 
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6">Level One Projects</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="form.png" alt="Style-Form" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Style-Form</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">An assignment to create form and style it to our taste as desire.</p>
-                            <a href="https://abelcash18.github.io/Style-Form/" class="text-primary hover:underline">View Project</a>
+            <!-- Level 1 Projects -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 border-l-4 border-primary pl-3">Level One UI Concepts</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="form.png" alt="Style-Form" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Style-Form</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">An exploratory project focusing on custom semantic input elements and CSS variables.</p>
+                            </div>
                         </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Style-Form/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
 
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="profile card.jpg" alt="Profile Card" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Profile-Card</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A simple profile card assignment.</p>
-                            <a href="https://abelcash18.github.io/Profile-Card/" class="text-primary hover:underline">View Project</a>
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="profile card.jpg" alt="Profile Card" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Profile-Card</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">A highly responsive dashboard user utility item component block.</p>
+                            </div>
                         </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Profile-Card/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
 
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="amazon clone.jpg" alt="Amazon Clone" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Clone-Amazon</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">An e-commerce clone built as a level one project.</p>
-                            <a href="https://abelcash18.github.io/Amazon-clone/" class="text-primary hover:underline">View Project</a>
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="amazon clone.jpg" alt="Amazon Clone" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Clone-Amazon</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Multi-grid storefront mock layout targeting pixel-perfect responsive behaviors.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-               
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="Analog clock.webp" alt="Style-Form" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Analog Clock</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A simple Analog clock with different Country Time.</p>
-                            <a href="https://abelcash18.github.io/Analog-Clock/" class="text-primary hover:underline">View Project</a>
-                        </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Amazon-clone/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
 
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="Digital clock.avif" alt="Profile Card" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Digital Clock</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A simple Digital clock with different Country Time.</p>
-                            <a href="https://abelcash18.github.io/Digital-Clock/" class="text-primary hover:underline">View Project</a>
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="Analog clock.webp" alt="Analog Clock" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Analog Clock</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">A clean Javascript clock interface matching internal logic against multi-region standard time.</p>
+                            </div>
                         </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Analog-Clock/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
 
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="Internet speed.webp" alt="Amazon Clone" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Internet Speed Test</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">An internet Speed counter.</p>
-                            <a href="https://abelcash18.github.io/Internet-Speed-Test-/" class="text-primary hover:underline">View Project</a>
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="Digital clock.avif" alt="Digital Clock" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Digital Clock</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">A minimal multi-time zone digital display interface configuration.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6">Level Two Projects</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="network .jpg" alt="Network Identifier" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Network Provider Phone-Number-identifier</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">Identifies Nigerian network providers from phone numbers.</p>
-                            <a href="https://abelcash18.github.io/Phone-Number-identifier/" class="text-primary hover:underline">View Project</a>
-                        </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Digital-Clock/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
 
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="photo app.jpg" alt="Photo App" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Photo App</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A photo gallery app showcasing image handling.</p>
-                            <a href="https://abelcash18.github.io/Photo-App/" class="text-primary hover:underline">View Project</a>
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="Internet speed.webp" alt="Internet Speed Test" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Internet Speed Test</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Dynamic JS utility capturing download parameters client-side.</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="time.jpg" alt="Multiplication Table" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Multiplication Table</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A utility to generate multiplication tables.</p>
-                            <a href="https://abelcash18.github.io/Times--table/" class="text-primary hover:underline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="images.png" alt="Countdown Timer" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Countdown Timer</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A simple countdown timer app.</p>
-                            <a href="https://abelcash18.github.io/Count-Down-timer/" class="text-primary hover:underline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="register .jpg" alt="Register Form" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Register Form</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A registration form demo.</p>
-                            <a href="https://abelcash18.github.io/Register--User/" class="text-primary hover:underline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="calculator-gd4637ddb5_1280-757x1024.png" alt="Calculator" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Calculator</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A basic calculator implementation.</p>
-                            <a href="https://abelcash18.github.io/Calculator/" class="text-primary hover:underline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="weather.jpg" alt="Weather App" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Weather App</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A weather forecast application demo.</p>
-                            <a href="https://abelcash18.github.io/Weather-info/" class="text-primary hover:underline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="Keyboard.jpg" alt="Keyboard" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Keyboard</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A virtual keyboard implementation.</p>
-                            <a href="https://abelcash18.github.io/Keyboard/" class="text-primary hover:underline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="moving eye.gif" alt="Moving Eye" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Moving Eye</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">An animated eye demonstration.</p>
-                            <a href="https://abelcash18.github.io/Moving-Eyeball/" class="text-primary hover:underline">View Project</a>
-                        </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Internet-Speed-Test-/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
                 </div>
             </div>
+
+            <!-- Level 2 Projects -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 border-l-4 border-primary pl-3">Level Two Functional Systems</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="network .jpg" alt="Network Identifier" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Network Provider Identifier</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Regex pattern script checking and returning correct Nigerian telco prefixes dynamically.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Phone-Number-identifier/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
+                    </div>
+
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="photo app.jpg" alt="Photo App" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Photo App</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Image gallery module with filter, viewport lightbox control logic setups.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Photo-App/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
+                    </div>
+
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="time.jpg" alt="Multiplication Table" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Multiplication Table Generator</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Arithmetic utility logic engine outputting tabular nested matrices dynamically.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Times--table/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 3 Projects -->
             <div>
-                <h3 class="text-2xl font-semibold mb-6">Level Three Projects</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="Dewgate Consults.jpeg" alt="Dewgates Consults Web-App (level 3)" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Dewgates Consults Web-App</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">Advanced Real Estate Web App.</p>
-                            <a href="https://frontend-drab-three-53.vercel.app" class="text-primary hover:underline">View Project</a>
+                <h3 class="text-2xl font-semibold mb-6 border-l-4 border-primary pl-3">Level Three Advanced Web Apps</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="Dewgate Consults.jpeg" alt="Dewgates Consults Web-App" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Dewgates Consults Web-App</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Full-scale property exploration ecosystem supporting active layout filtering matrices and query performance updates.</p>
+                            </div>
                         </div>
+                        <div class="p-5 pt-0"><a href="https://frontend-drab-three-53.vercel.app" target="_blank" class="text-primary hover:underline font-medium">View Production Site →</a></div>
                     </div>
 
-                     <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                        <img src="pricing-page.jpg" alt="Pricing Page" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-semibold mb-2">Pricing Page</h4>
-                            <p class="text-black-600 dark:text-white-300 mb-4">A responsive pricing page implementation.</p>
-                            <a href="https://abelcash18.github.io/Price-page/" class="text-primary hover:underline">View Project</a>
+                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="pricing-page.jpg" alt="Pricing Page" class="w-full h-48 object-cover">
+                            <div class="p-5">
+                                <h4 class="text-xl font-semibold mb-2">Pricing Matrix Hub</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Premium micro-service component tier configuration dashboard with dynamic annual / monthly toggles.</p>
+                            </div>
                         </div>
+                        <div class="p-5 pt-0"><a href="https://abelcash18.github.io/Price-page/" target="_blank" class="text-primary hover:underline font-medium">View Project →</a></div>
                     </div>
-                   </div>
+                </div>
             </div>
         </div>
     </section>
-          <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4 section-title">Experience</h2>
             </div>
-                <div class="relative max-w-4xl mx-auto">
-                    <div class="timeline">
-                        <div class="timeline-item mb-12 animate-in delay-100">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Freelance Full Stack Developer</h3>
-                            <p class="text-primary font-semibold mb-4">Feb 2026- Present | Remote</p>
-                             <p class="text-primary font-semibold mb-4">Benin City, Edo-State, Nigeria</p>
-                            <p class="text-gray-600 dark:text-gray-300">Building responsive web applications for clients, from e-commerce platforms to real estate web apps using modern tech stacks including React, Node.js, and Tailwind CSS.</p>
-                        </div>
-                        <div class="timeline-item mb-12 animate-in delay-200">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Darmisoft Computer Limited</h3>
-                             <p class="text-primary font-semibold mb-4">Mar 2024 - Jun 2024</p>
-                            <p class="text-primary font-semibold mb-4">Ijebu-Ode,Ogun-State,Nigeria</p>
-                            <p class="text-gray-600 dark:text-gray-300">Handled hardware repairs, software installations, system maintenance, and client training. Managed buy/sell/swap operations for computer systems.</p>
-                        </div>
-                        <div class="timeline-item animate-in delay-300">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">SQI School of Ict (Web Development Full Stack)</h3>
-                            <p class="text-primary font-semibold mb-4">Jan 2025 - Dec 2025 </p>
-                             <p class="text-primary font-semibold mb-4">Abeokuta,Ogun-State,Nigeria</p>
-                            <p class="text-gray-600 dark:text-gray-300">Mastered frontend and backend development through intensive projects including Amazon clone, weather apps, and full-stack real estate platforms.</p>
-                        </div>
-                    </div>
+            <div class="relative max-w-3xl mx-auto border-l-2 border-gray-200 dark:border-gray-700 pl-6 space-y-12">
+                
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-gray-50 dark:border-gray-900"></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Freelance Full Stack Developer</h3>
+                    <p class="text-primary text-sm font-semibold mb-2">Feb 2026 - Present | Benin City, Nigeria (Remote)</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Building fluid client systems from modern asset configurations to real estate systems via functional component layers (React, Node.js, and Tailwind CSS structures).
+                    </p>
                 </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-gray-50 dark:border-gray-900"></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Computer Engineering Associate</h3>
+                    <p class="text-primary text-sm font-semibold mb-2">Mar 2024 - Jun 2024 | Darmisoft Computer Ltd</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Managed direct computer repairs, automated network installations, and handled diagnostics operations for commercial system configurations.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-gray-50 dark:border-gray-900"></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Full Stack Trainee</h3>
+                    <p class="text-primary text-sm font-semibold mb-2">Jan 2025 - Dec 2025 | SQI School of ICT</p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Immersive system training architecture encompassing layout design, API configurations, relational tracking matrices, and hosting setups.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-      <section id="contact" class="py-20 bg-gradient-to-b from-white to-white-50 dark:from-white-800 dark:to-gray-900">
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Get In Touch</h2>
-                <p class="text-black-600 dark:text-white-400 text-lg max-w-2xl mx-auto">Have a project in mind or just want to chat? Send me a message and I'll get back to you as soon as possible.</p>
+                <h2 class="text-3xl font-bold mb-4 section-title">Get In Touch</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Have a project or opportunity you want to talk about? Drop me a line below.</p>
             </div>
             
-            <form action="#" method="POST" class="max-w-2xl mx-auto bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 space-y-6">
+            <form action="#" method="POST" class="max-w-2xl mx-auto bg-gray-50 dark:bg-gray-700/30 rounded-2xl shadow-md p-8 md:p-12 space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="fullName" class="block text-sm font-semibold text-black-700 dark:text-white-200 mb-3">Full Name</label>
-                        <input 
-                            type="text" 
-                            id="fullName" 
-                            name="name" 
-                            required 
-                            placeholder="John Doe"
-                            class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                        <label for="fullName" class="block text-sm font-semibold mb-2">Full Name</label>
+                        <input type="text" id="fullName" name="name" required placeholder="John Doe"
+                            class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-semibold text-black-700 dark:text-white-200 mb-3">Email Address</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required 
-                            placeholder="your@email.com"
-                            class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                        <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com"
+                            class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
                     </div>
                 </div>
                 
                 <div>
-                    <label for="message" class="block text-sm font-semibold text-black-700 dark:text-white-200 mb-3">Message</label>
-                    <textarea 
-                        id="message" 
-                        name="message" 
-                        rows="5" 
-                        required 
-                        placeholder="Tell me about your project or just say hello..."
-                        class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"></textarea>
+                    <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."
+                        class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"></textarea>
                 </div>
                 
-                <button 
-                    id="sendMessage" 
-                    type="submit" 
-                    class="w-full px-6 py-3 bg-gradient-to-r from-primary to-primary-dark hover:shadow-lg text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105 active:scale-95">
+                <button type="submit" class="w-full px-6 py-3 bg-primary text-gray-900 font-bold rounded-lg hover:bg-primary-dark shadow-md transition transform active:scale-95">
                     Send Message <i class="fas fa-paper-plane ml-2"></i>
                 </button>
             </form>
         </div>
     </section>
-    <footer class="py-6 bg-white dark:bg-gray-800">
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-black-600 dark:text-white-300">© 2025 Joseph Abel. All rights reserved.</p>
+            <p class="text-gray-500 text-sm">© 2026 Joseph Abel. All rights reserved.</p>
         </div>
     </footer>
 
-
-<script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
